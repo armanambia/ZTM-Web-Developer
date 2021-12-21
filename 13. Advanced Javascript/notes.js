@@ -165,3 +165,80 @@ const userProfiles = [['commanderTom', 23], ['derekZlander', 40], ['hansel', 12]
 const obj = Object.fromEntries(userProfiles)
 // now go back
 Object.entries(obj) // will look like userProfile
+
+
+
+// ----------------------------------- 169 Advanced Loops
+const basket = ['apple','banana','orange']
+// for
+for (let i = 0; i < basket.length; i++){
+    console.log(basket[i])
+}
+// for each
+basket.forEach(item => {
+   console.log(item); 
+})
+
+// for of
+// this iterates over arrays and strings
+for (item of basket){
+    console.log(item);
+}
+for (item of "basket"){
+    console.log(item);
+}
+
+// for in
+// works with objects
+const detailedBasket = {
+    apples: 5,
+    oranges: 10,
+    grapes: 1000,
+}
+// will loop through object properties
+// this is enumeration we are not iterating
+for(item in detailedBasket){
+    console.log(item)
+}
+
+// ----------------------------------- 171 ES2020
+// BigInt
+// stores numbers bigger than MAX_SAFE_INTEGER
+typeof(1n)
+
+// optional chaining operator ?.
+
+let poke = {
+    raichu: {
+        species: 'Mouse',
+        height: 0.8,
+        weight: 30,
+    }
+}
+// if any fail make it undefined ****
+// this will check if poke exists, if it does then try pikachu
+// now check if pikachu exists, if it does try weight
+// now check weight if it does get value
+let weight3 = poke?.pikachu?.weight  // undef
+let weight4 = poke?.raichu?.weight  // 30
+
+// Nullishing Coalescing operator
+let poke2 = {
+    raichu: {
+        species: 'Mouse',
+        height: 0.8,
+        weight: 30,
+        power: 0
+    }
+}
+
+let power = poke2?.raichu?.power || 'no power'  // no power
+// empty string or 0 or no property are both false
+
+let power2 = poke2?.raichu?.power ?? 'no power' // 0
+// now you are looking only if its undefined, undefined is false but 
+// rest is true
+
+// ----------------------------------- 175 ES2021
+const str= "ztm is the best of the best"
+str.replaceAll("best", "worst")
