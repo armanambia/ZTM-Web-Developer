@@ -1,0 +1,12 @@
+1. Clone the Repo
+2. Delete any node modules folder
+3. Delete the package-lock file or unlock files
+4. Check pacakge.json for scripts - this should be here, if not add it:
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+	}
+5. RUN npm install
+6. RUN npm start
